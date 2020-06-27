@@ -1,9 +1,8 @@
 const {
   notExistFold,
   downloadTemplate,
-  updateTemplateJson,
-  startZip 
-} = require('../src/utils/index')
+  updateTemplateJson
+} = require('../lib/utils/index')
 const fs = require('fs')
 const rimraf = require('rimraf') 
 
