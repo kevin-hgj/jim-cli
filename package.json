@@ -1,10 +1,18 @@
 {
   "name": "jim-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "脚手架 cli",
   "main": "index.js",
+  "bin": {
+    "jim-cli": "./bin/www",
+    "jim": "./bin/www"
+  },
   "scripts": {
-    "test": "none"
+    "commit-msg": "validate-commit-msg",
+    "changelog": "conventional-changelog -p angular -i CHANGELOGA.md -s -r 0",
+    "lint": "eslint --ext .js src",
+    "test": "jest --coverage",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -23,13 +31,33 @@
   "dependencies": {
     "archiver": "^4.0.1",
     "babel-cli": "^6.26.0",
-    "babel-env": "^2.4.1",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
     "download-git-repo": "^3.0.2",
     "inquirer": "^7.1.0",
     "lodash": "^4.17.15",
     "log-symbols": "^4.0.0",
-    "ora": "^4.0.4"
+    "ora": "^4.0.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "assert": "^2.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "conventional-changelog-cli": "^2.0.34",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.11.0",
+    "glob-all": "^3.2.1",
+    "husky": "^4.2.5",
+    "istanbul": "^0.4.5",
+    "jest": "^26.1.0",
+    "rimraf": "^3.0.2",
+    "superagent": "^5.2.2",
+    "validate-commit-msg": "^2.14.0"
   }
 }
